@@ -1,0 +1,35 @@
+AppBundle\Entity\Product:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ProductRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        price:
+            type: decimal
+            precision: 10
+            scale: 0
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: products
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+
+    oneToMany:
+        ratingproducts:
+            targetEntity: Ratingproduct
+            mappedBy: product

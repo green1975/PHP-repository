@@ -1,0 +1,21 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+app_product:
+    resource: "@AppBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+app_ratingproduct:
+    resource: "@AppBundle/Resources/config/routing/ratingproduct.yml"
+    prefix:   /ratingproduct
+app_ratinguser:
+    resource: "@AppBundle/Resources/config/routing/ratinguser.yml"
+    prefix:   /ratinguser
+app_category:
+    resource: "@AppBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+app_user:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+

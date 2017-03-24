@@ -1,0 +1,24 @@
+ratinguser_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Ratinguser:index" }
+    methods:  GET
+
+ratinguser_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Ratinguser:show" }
+    methods:  GET
+
+ratinguser_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Ratinguser:new" }
+    methods:  [GET, POST]
+
+ratinguser_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Ratinguser:edit" }
+    methods:  [GET, POST]
+
+ratinguser_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Ratinguser:delete" }
+    methods:  DELETE

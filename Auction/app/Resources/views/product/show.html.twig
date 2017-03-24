@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">{{ product.title }}</span>
+                <p>Description: </p>
+                <p>{{ product.description }}</p>
+            </div>
+            <div class="card-action">
+                <h4>Price: {{ product.price }}</h4>
+                </div>
+                {{ form_start(form) }}
+                {{ form_row(form.rating) }}
+                {{ form_row(form.comment) }}
+                <input type="submit" value="Create" />
+                {{ form_end(form) }}
+            </div>
+        </div>
+       {% for rating in ratingproduct %}
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">{{ rating.userId }}</span>
+                    <p>{{ rating.comment }}</p>
+                </div>
+                <div class="card-action">
+                    <p>Note: {{ rating.rating }}/5<p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}      
+
+        <ul>
+            <li>
+                <a href="{{ path('product_index') }}">Back to the list</a>
+            </li>
+            <li>
+                <a href="{{ path('product_edit', { 'id': product.id }) }}">Edit</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+        {% endblock %}

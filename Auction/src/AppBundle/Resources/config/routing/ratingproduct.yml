@@ -1,0 +1,24 @@
+ratingproduct_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Ratingproduct:index" }
+    methods:  GET
+
+ratingproduct_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Ratingproduct:show" }
+    methods:  GET
+
+ratingproduct_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Ratingproduct:new" }
+    methods:  [GET, POST]
+
+ratingproduct_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Ratingproduct:edit" }
+    methods:  [GET, POST]
+
+ratingproduct_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Ratingproduct:delete" }
+    methods:  DELETE

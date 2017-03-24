@@ -1,0 +1,28 @@
+AppBundle\Entity\Ratingproduct:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\RatingproductRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        rating:
+            type: integer
+        comment:
+            type: string
+            length: 255
+        userId:
+            type: integer
+            column: user_id
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        product:
+            targetEntity: Product
+            inversedBy: ratingproducts
+            joinColumn:
+                name: product_id
+                referencedColumnName: id

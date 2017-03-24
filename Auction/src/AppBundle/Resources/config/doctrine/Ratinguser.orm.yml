@@ -1,0 +1,28 @@
+AppBundle\Entity\Ratinguser:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\RatinguserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        rating:
+            type: integer
+        comment:
+            type: string
+            length: 255
+        userId:
+            type: integer
+            column: user_id
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: ratingusers
+            joinColumn:
+                name: current_id
+                referencedColumnName: id
